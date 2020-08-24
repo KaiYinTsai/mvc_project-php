@@ -1,0 +1,26 @@
+<?php $action = $this->getAction();
+$action = $action[1];
+
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset = "UTF-8">
+<link rel = "stylesheet" href = '../public/style.css'  type = "text/css" media = "all">
+
+<script src="../public/jquery-3.5.1.js"></script>
+<title><?php echo (isset($this->page_title) ? $this->page_title : 'Connegence-iot'); ?></title>
+</head>
+<body>
+<h2>ZTD Company</h2>
+<hr class = "header-hr"/>
+<nav>
+	<ul>
+		<li><a href = "/home/index" <?php echo $action =='index'? 'class=active' : '' ?> >Home</a></li>
+		<li><a href = "/home/aboutUs" <?php echo $action =='aboutUs'? 'class=active' : '' ?> >About</a></li>
+		<li><a href = "/IMEI/indexImei" <?php echo $action =='indexImei'? 'class=active' : '' ?> id = 'indeximei' >IMEI</a></li>
+	</ul>
+</nav>
+<hr class = "header-hr"/>
+<div class = "sidebar-div" id = 'sidebar-right'></div>

@@ -1,0 +1,16 @@
+<a href = "/IMEI/imeiSearch">IMEISearch</a>
+<a href = "/IMEI/imeiEdit">IMEIedit</a>
+
+<h1>Show Imei List</h1>
+<?php 
+
+$data = $this->view_data;
+
+$a=0;
+foreach($data as $value) {
+    
+    $value = explode(',',$value);
+    var_dump($value);
+
+}
+?>

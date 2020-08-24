@@ -1,0 +1,67 @@
+/*----------Selective Menu------------*/
+
+nav {
+    background-color: #00cfff;
+    padding: 16px;
+    color: white;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    display: bolck;
+    padding: 16px 34px;
+    text-decoration: none;
+    color: white;
+}
+
+nav ul li a:hover:not(.active) {
+    background-color: #aff1ff;
+    font-weight: bold;
+}
+
+.active {
+    background-color: #000000;
+}
+
+
+/*-------------Header Line---------------*/
+
+hr.header-hr {
+    border: 0;
+    height: 5px;
+    background: #00cfff;
+}
+
+
+/*------------------Div Control--------------------*/
+
+div.footer-div {
+    text-align: right;
+    clear: both;
+}
+
+div.sidebar-div {
+    margin-top: -8px;
+    background-color: #00cfff;
+    float: right;
+    width: 20px;
+    min-height: 800px;
+}
+
+
+/*--------------Table---------------------------*/
+
+table.Imeitable {
+    border-width: 3px;
+    border-color: #000000;
+    border-collapse: collapse;
+}

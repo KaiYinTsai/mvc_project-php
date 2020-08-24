@@ -1,0 +1,46 @@
+<?php 
+$data = $this->view_data;
+
+
+?>
+<h1>IMEI search</h1>
+		<div>
+			<label>Select a product to start Research IMEI</label>
+			<form> 
+				<select name="Product" id="ZTDProduct" onchange="getimei();getform();">
+					<?php 
+
+					for($i=0;$i<count($data);$i++) {
+
+						echo "<option value=".$data[$i][1].">".$data[$i][0]."</option>";
+						
+					}
+
+					$url = "imei/imeiSearch";
+
+					?>
+					
+				</select>
+			</form>
+				
+		</div>
+		<div>
+			<label>IMEI Start Number</label><br/>
+<table class="Imeitable" border>
+    <tr>
+    	<th>Date		</th>
+    	<th>HW_Version	</th>
+    	<th>SW_Version	</th>
+    	<th>Freq_Setting</th>
+		<th>IMEI_Start	</th>
+		<th>IMEI_END	</th>
+   		<th>Remarks		</th>
+	</tr>
+	<tr><td></td></tr>
+	</table>
+	
+			<div id = 'searchResult'></div><br/>
+		</div>
+		<input type = "button" onclick = "getimei()" value = 'PUTT'/>
+		<input type="text" value='' id='getOptionValue' onvolumechange="getform()" readonly/>
+	</div>
