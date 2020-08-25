@@ -8,7 +8,7 @@ class Sql
     public $_table;
 
     // 連線資料庫
-    public function connect($host, $username, $password, $dbname)
+    protected function connect($host, $username, $password, $dbname)
     {
 	$conn = mysqli_connect( $host, $username, $password );
 if( !$conn ) {
@@ -23,7 +23,7 @@ if(!$db = mysqli_select_db($conn, $dbname))
 	return $conn;
     }
 
-    public function disconnect() 
+    protected function disconnect() 
     {
 
         if(mysqli_close($this->conn))
@@ -33,18 +33,18 @@ if(!$db = mysqli_select_db($conn, $dbname))
 
 
     // 查詢條件
-    public function where($where = array())
+    protected function where($where = array())
     {
         if (isset($where)) {
             $this->filter .= ' WHERE ';
-            $this->filter .= implode(' ', $where);
+            $this->filter .=$where;
         }
 
         return $this;
     }
 
     // 排序條件
-    public function order($order = array())
+    protected function order($order = array())
     {
         if(isset($order)) {
             $this->filter .= ' ORDER BY ';
@@ -55,7 +55,7 @@ if(!$db = mysqli_select_db($conn, $dbname))
     }
 
     // 查詢所有
-    public function selectAll($colon)
+    protected function selectAll($colon)
     {
         $sql = sprintf("select %s from `%s` %s", $colon, $this->_table, $this->filter);
         $data = $this->query($sql);
@@ -65,7 +65,7 @@ if(!$db = mysqli_select_db($conn, $dbname))
     }
 
     // 根據條件 查詢
-    public function select($colonSelect, $colon, $id)
+    protected function select($colonSelect, $colon, $id)
     {
         $sql = sprintf("select %s from `%s` where `%s` = '%s'", $colonSelect, $this->_table,$colon, $id);
       
@@ -76,7 +76,7 @@ if(!$db = mysqli_select_db($conn, $dbname))
     }
 
     // 根據欄位條件刪除
-    public function delete($colon, $id)
+    protected function delete($colon, $id)
     {
         $sql = sprintf("delete from `%s` where `%s` = '%s'", $this->_table, $colon, $id);
         $data = $this->prepare($sql);
@@ -85,7 +85,7 @@ if(!$db = mysqli_select_db($conn, $dbname))
     }
 
     // 自定義SQL查詢，返回影響的行數
-    public function query($sql)
+    protected function query($sql)
     {
         $data = $this->prepare($sql);
 
@@ -93,7 +93,7 @@ if(!$db = mysqli_select_db($conn, $dbname))
     }
 
     // 新增資料
-    public function add($data)
+    protected function add($data)
     {
         $sql = sprintf("insert into `%s` %s", $this->_table, $this->formatInsert($data));
 
@@ -101,7 +101,7 @@ if(!$db = mysqli_select_db($conn, $dbname))
     }
 
     // 修改資料
-    public function update($id, $data)
+    protected function update($id, $data)
     {
         $sql = sprintf("update `%s` set %s where `id` = '%s'", $this->_table, $this->formatUpdate($data), $id);
 
@@ -135,7 +135,7 @@ if(!$db = mysqli_select_db($conn, $dbname))
         return implode(',', $fields);
     }
 
-    public function prepare($sql) {
+    private function prepare($sql) {
 
         mysqli_query($this->conn,'set_names_utf8');
         $query = mysqli_query($this->conn,$sql);

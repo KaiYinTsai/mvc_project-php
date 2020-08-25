@@ -22,15 +22,11 @@ class imeiController extends Controller
 //		echo 'IMEI search page '.__CLASS__ .'and ' . __METHOD__;
 //		$this->sql->connect('localhost', 'root', '', 'ztd_database');
 		$this->model();
-		$this->model->config = 'dbconfig';
-		$this->model->dbconnect();
+		$data = $this->model->selectdata('ztd_product','product_name,product_id','');
 
-		$this->model->_table = 'ztd_product';
-		$data = $this->model->selectAll('product_name,product_id');
-		$this->model->disconnect();	
 		$this->view('IMEI'. DIRECTORY_SEPARATOR . 'imeiSearch',$data);
 		$this->view->render();
-		
+
 
 	}
 

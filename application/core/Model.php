@@ -32,14 +32,33 @@ class Model extends sql
     
     }
 
-    public function dbconnect() {
+    private function dbconnect() {
 
         $this->loadconfig($this->config);
         $this->connect($this->dbserver, $this->dbuser, $this->password, $this->dbname);
     }
 
 
+    public function selectdata($table,$modelname,$condition) {
+        $this->config = 'dbconfig';
+        $this->dbconnect();
+        $this->_table = $table;
+        if( $condition == '')
+            $data = $this->selectAll($modelname);
+        else {
+
+            $this->where('ztd_project.project_id=ztd_product.project_id');
+            $data = $this->selectAll($modelname);
+
+        }
+
+   
+ 
+            $this->disconnect();
+        return $data;
+    }
 
 
 
 }
+

@@ -7,9 +7,8 @@ function getimei() {
 function getform() {
     var a = document.getElementById("getOptionValue").value;
 
-    print
-
 }
+
 
 
 //ajax request
@@ -60,6 +59,34 @@ $('#ZTDProduct').change(function() {
         error: function(xhr) { alert(xhr.status + "Text: " + xhr.statusText) },
     })
 })
+
+$('#ZTDProjectsel').change(function() {
+    var selected = $('ZTDProjectsel').val();
+    alert(selected);
+    $.ajax({
+        url: "../application/model/dynamic/get_productproject_join.php", //後臺請求的資料，用的是PHP
+        dataType: "json", //資料格式
+        type: "Post", //請求方式
+        async: false, //是否非同步請求
+        data: selected,
+        success: function(data) { //如果請求成功，返回資料。
+
+            console.log(data);
+            var html = "<tr>";
+            var col = 0
+            leng = data[0].length;
+            for (c = 1; c < leng; c++) {
+
+                html += "<td>" + data[0][col] + "</td>";
+                col++;
+            }
+            html += "</tr>";
+            $(".projecttable").append(html);
+        },
+        error: function(xhr) { alert(xhr.status + "Text: " + xhr.statusText) },
+    })
+})
+
 
 $(function() {
     $("td").click(function(event) {

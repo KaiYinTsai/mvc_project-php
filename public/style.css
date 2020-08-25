@@ -1,29 +1,29 @@
 /*----------Selective Menu------------*/
 
-nav {
+.bannerlist {
     background-color: #00cfff;
     padding: 16px;
     color: white;
 }
 
-nav ul {
+.bannerlist ul {
     list-style-type: none;
     padding: 0px;
     margin: 0px;
 }
 
-nav ul li {
+.bannerlist ul li {
     display: inline-block;
 }
 
-nav ul li a {
+.bannerlist ul li a {
     display: bolck;
     padding: 16px 34px;
     text-decoration: none;
     color: white;
 }
 
-nav ul li a:hover:not(.active) {
+.bannerlist ul li a:hover:not(.active) {
     background-color: #aff1ff;
     font-weight: bold;
 }
