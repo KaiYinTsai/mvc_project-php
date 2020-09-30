@@ -4,36 +4,33 @@ class imeiController extends Controller
 {
 	protected $rol=[];
 	
-	public function indexImei() {
+	public function ImeiIndex() {
 		
 		$this->model();
 		$data = $this->model->loadfile('imei','txt');
 
-		$this->view('imei' . DIRECTORY_SEPARATOR . 'indexImei',$data);
+		$this->view('IMEI' . DIRECTORY_SEPARATOR . 'ImeiIndex',$data);
 		$this->view->render();
 		
 	}
 
-	public function imeiSearch() {
+	public function ImeiSearch() {
 		
-		if(file_exists( ACTION . 'action.js')){
-
-		}
 //		echo 'IMEI search page '.__CLASS__ .'and ' . __METHOD__;
 //		$this->sql->connect('localhost', 'root', '', 'ztd_database');
 		$this->model();
 		$data = $this->model->selectdata('ztd_product','product_name,product_id','');
 
-		$this->view('IMEI'. DIRECTORY_SEPARATOR . 'imeiSearch',$data);
+		$this->view('IMEI'. DIRECTORY_SEPARATOR . 'ImeiSearch',$data);
 		$this->view->render();
 
 
 	}
 
 
-	public function imeiEdit() {
+	public function ImeiEdit() {
 
-		$this->view('IMEI' . DIRECTORY_SEPARATOR . 'imeiEdit');
+		$this->view('IMEI' . DIRECTORY_SEPARATOR . 'ImeiEdit');
 		$this->view->render();
 
 	}

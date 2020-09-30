@@ -20,15 +20,10 @@ class View
 			include VIEW . $this->view_file . '.phtml';
 			include VIEW.("footer.phtml");
 		}
-
-		else {
-
-			echo"<h1 id='nofileexist'>404 NO Found This Page<h1>";
-		}
 		
 	}
 	
-	
+
 	public function getAction() {
 		$action = explode(DIRECTORY_SEPARATOR,$this->view_file);
 		return $action;

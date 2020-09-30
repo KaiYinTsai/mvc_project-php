@@ -47,17 +47,25 @@ class Model extends sql
             $data = $this->selectAll($modelname);
         else {
 
-            $this->where('ztd_project.project_id=ztd_product.project_id');
+            $this->where($condition);
             $data = $this->selectAll($modelname);
 
         }
-
-   
  
             $this->disconnect();
         return $data;
     }
 
+    public function getinfo($table,$modelname,$condition) {
+
+        $this->config = 'dbconfig';
+        $this->dbconnect();
+        $this->_table = $table;
+
+       $data = $this->getTableAll($modelname);
+        return $data;
+
+    }
 
 
 }

@@ -54,13 +54,19 @@ if(!$db = mysqli_select_db($conn, $dbname))
         return $this;
     }
 
+    protected function getTableAll($colon)
+    {
+        $sql = sprintf("select %s from `%s` %s", $colon, $this->_table, $this->filter);
+        $data = $this->preparsqlinfo($sql);
+        return $data;
+    }
+
     // 查詢所有
     protected function selectAll($colon)
     {
+        
         $sql = sprintf("select %s from `%s` %s", $colon, $this->_table, $this->filter);
         $data = $this->query($sql);
-        
-
         return $data;
     }
 
@@ -137,15 +143,42 @@ if(!$db = mysqli_select_db($conn, $dbname))
 
     private function prepare($sql) {
 
-        mysqli_query($this->conn,'set_names_utf8');
-        $query = mysqli_query($this->conn,$sql);
+       $query = $this->querysql($sql);
        $rol_num = mysqli_num_rows($query);
 
-        for($num = 0;$num < $rol_num;$num++ ) {
-            $result[$num] = mysqli_fetch_row($query);
-        
-         }
+       if($rol_num > 0 ) {
+            for($num = 0;$num < $rol_num;$num++ ) {
+                $result[$num] = mysqli_fetch_row($query);
+            }
+        }
+        else {
+            $result[0]=["null"];
+        } 
 
         return $result;
     }
+
+    private function preparsqlinfo($sql) {
+        $tablename =[];
+        $num=0;
+        $query = $this->querysql($sql);
+            while($rol=mysqli_fetch_field($query)) {
+                
+            $tablename[$num]= $rol->name;
+            $num++;
+            }
+         return $tablename;
+    }
+
+//input sql and out put query information
+    private function querysql($sql) {
+
+        mysqli_query($this->conn,'set_names_utf8');
+        $query = mysqli_query($this->conn,$sql);
+
+        return $query;
+    }
+
+
+
 }

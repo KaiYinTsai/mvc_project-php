@@ -1,67 +1,298 @@
-/*----------Selective Menu------------*/
-
-.bannerlist {
-    background-color: #00cfff;
-    padding: 16px;
-    color: white;
-}
-
-.bannerlist ul {
-    list-style-type: none;
-    padding: 0px;
-    margin: 0px;
-}
-
-.bannerlist ul li {
-    display: inline-block;
-}
-
-.bannerlist ul li a {
-    display: bolck;
-    padding: 16px 34px;
-    text-decoration: none;
-    color: white;
-}
-
-.bannerlist ul li a:hover:not(.active) {
-    background-color: #aff1ff;
-    font-weight: bold;
-}
-
-.active {
-    background-color: #000000;
-}
-
-
-/*-------------Header Line---------------*/
-
-hr.header-hr {
-    border: 0;
-    height: 5px;
-    background: #00cfff;
-}
-
-
-/*------------------Div Control--------------------*/
-
-div.footer-div {
-    text-align: right;
-    clear: both;
-}
-
-div.sidebar-div {
-    margin-top: -8px;
-    background-color: #00cfff;
-    float: right;
-    width: 20px;
-    min-height: 800px;
-}
-
-
-/*--------------Table---------------------------*/
-
-table.Imeitable {
-    border-width: 3px;
-    border-color: #000000;
-    border-collapse: collapse;
-}
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        background: #ffffff;
+        font-family: Microsoft Yahei;
+    }
+    
+    .web-frame {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    /***************************header******************************/
+    /*----------Selective Menu------------*/
+    
+    #nofileexist {
+        widows: 100%;
+        height: 200px;
+    }
+    /*----------Selective Menu------------*/
+    
+    .bannerlist-ul {
+        background-color: #00cfff;
+        padding: 1em;
+        color: white;
+    }
+    
+    .bannerlist-ul ul {
+        list-style-type: none;
+        padding: 0px;
+        margin: 0px;
+    }
+    
+    .bannerlist-ul ul li {
+        display: inline-block;
+    }
+    
+    .bannerlist-ul ul li a {
+        display: bolck;
+        padding: 0.7em 2em;
+        text-decoration: none;
+        color: white;
+        font-size: 1.5em;
+    }
+    
+    .bannerlist-ul ul li a:hover:not(.active) {
+        background-color: #aff1ff;
+        font-weight: bold;
+    }
+    
+    .active {
+        background-color: #3102af;
+    }
+    /*-------------Header Line(hr)---------------*/
+    
+    hr.ztd-header-hr {
+        border: 0;
+        height: 5px;
+        background: #00cfff;
+    }
+    /***************************************Footer*****************************/
+    
+    div.ztd-footer-div {
+        float: left;
+        text-align: right;
+        width: 100%;
+        position: relative;
+        bottom: 0;
+    }
+    /*********************Right Bar()*****************************/
+    
+    div.sidebar-div {
+        float: right;
+        background-color: #00cfff;
+        width: 20px;
+        padding-bottom: auto;
+    }
+    /*--------------Table---------------------------*/
+    
+    table.Imeitable {
+        border-width: 3px;
+        border-color: #000000;
+        border-collapse: collapse;
+    }
+    /*-------------------LeftBar(ListBar)-------------------*/
+    
+    #ztd-list-bar-div {
+        float: left;
+        width: 15em;
+        background-color: #00cfff;
+        text-align: center;
+        height: 100%;
+    }
+    
+    h3 {
+        margin: 0px;
+        color: #ffffff;
+    }
+    
+    #actionitem {
+        padding-top: 1em;
+        height: 2em;
+        font-size: 2em;
+        text-align: center;
+        border-bottom: solid 2px #cccccc;
+        background-color: #3102af;
+    }
+    
+    #actionitem-off {
+        padding-top: 1em;
+        height: 2em;
+        font-size: 2em;
+        text-align: center;
+        border-bottom: solid 2px #cccccc;
+        background-color: #aaaaaa;
+    }
+    
+    #actionitem:hover:not(.off) {}
+    
+    #triangle-div {
+        width: 100%;
+        background-color: #cccccc;
+    }
+    
+    .off {
+        font-size: 1.5em;
+        text-align: center;
+        background-color: black;
+    }
+    
+    .listbar-ul {}
+    
+    .listbar-ul ul {
+        list-style-type: none;
+        padding: 0px;
+        margin: 0px;
+    }
+    
+    .listbar-ul ul li {
+        padding-bottom: 0.5em;
+        padding-top: 0.5em;
+        font-size: 1.5em;
+        border-bottom: solid 2px #cccccc;
+        width: 80%;
+        margin-left: 10%
+    }
+    
+    .listbar-ul ul li:hover:not(.baractive) {
+        text-align: center;
+        display: block;
+        padding-bottom: 0.5em;
+        background-color: #aff1ff;
+        width: 100%;
+        margin-left: 0%;
+    }
+    
+    .listbar-ul ul li a {
+        text-decoration: none;
+    }
+    
+    .baractive {
+        background-color: #5532ff;
+    }
+    /******************MainPage*******************/
+    
+    div.ztd-main-view-div {
+        float: none;
+        margin-top: 0px;
+        overflow: auto;
+        background-color: #f0f8ff;
+        padding-left: 1em;
+        height: 100%;
+    }
+    /************VIEW Folder*****************************************/
+    /*************Project***************************************/
+    /******Projectnew*****/
+    
+    .projectnew-main-div {}
+    
+    .projectnew-div {
+        width: 100%;
+        font-size: 1.5em;
+        text-align: left;
+    }
+    
+    .projectnewlabel-div {
+        float: left;
+        width: auto;
+        padding-right: 1em;
+        line-height: 2em;
+        text-align: left;
+    }
+    
+    .projectnewinput-div {
+        float: left;
+        width: auto;
+        text-align: left;
+    }
+    
+    .projectnew-input {
+        font-size: 1em;
+        width: 15em;
+        margin-bottom: 1em;
+        border-radius: 0.5em;
+    }
+    
+    .projectnew-select {
+        font-size: 1em;
+        width: 15em;
+        margin-bottom: 1em;
+        border-radius: 0.5em;
+        text-align: center;
+        text-align-last: center;
+    }
+    
+    .projectnew-input:hover {
+        background-color: #eff1ff;
+    }
+    
+    .projectnew-label {}
+    
+    select.projectnew-input {
+        font-size: 16px;
+    }
+    
+    div {
+        position: relative;
+    }
+    
+    .productselected-table-div {
+        float: left;
+        width: 100%;
+        background-color: #fff8ff;
+        text-align: -webkit-center;
+    }
+    
+    .projectproductselected-div {
+        width: 100%;
+    }
+    /********Project Index***********/
+    
+    table.projecttable {
+        border-collapse: collapse;
+        width: 100%;
+        text-align: center;
+        border: 2px solid #acacac;
+    }
+    
+    table.projecttable tr {}
+    
+    table.projecttable th {
+        background-color: deepskyblue;
+        border: 1px solid #cccccc;
+        padding-bottom: 2px;
+    }
+    
+    table.projecttable td {
+        border: 1px solid #cccccc;
+    }
+    
+    .projectbtn-div {
+        display: table;
+        text-align: center;
+        width: 100%;
+    }
+    
+    .project-btn {
+        margin: 1em;
+        display: table-cell;
+        border: 0px;
+        display: inline;
+        font-size: 1.5em;
+        color: white;
+        width: 20%;
+        height: 1.5em;
+        background-color: dodgerblue;
+        border-radius: 0.5em;
+    }
+    
+    .project-btn:hover {
+        background-color: #aff1ff;
+        padding-bottom: 0.5em;
+        color: grey;
+    }
+    
+    .project-select-div {
+        margin-bottom: 3em;
+    }
+    
+    .project-select {
+        border-radius: 0.5em;
+        font-size: 1.2em;
+        width: 20em;
+        text-align: center;
+        text-align-last: center;
+    }

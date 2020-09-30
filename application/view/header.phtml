@@ -1,6 +1,15 @@
 <?php $action = $this->getAction();
-$action = $action[1];
-
+$action = $action[0];
+$list = scandir(VIEW);
+$listq = count($list);
+while($listq>0){
+	$listq--;
+	$listtmp = $list[$listq];
+	if(substr($listtmp,-5)!='phtml' && substr($listtmp,-1)!='.') 
+	{
+	    echo $list[$listq]."|";
+	}
+}
 ?>
 
 <!DOCTYPE html>
@@ -13,15 +22,25 @@ $action = $action[1];
 <title><?php echo (isset($this->page_title) ? $this->page_title : 'Connegence-iot'); ?></title>
 </head>
 <body>
+</div class="web-frame">
 <h2>ZTD Company</h2>
-<hr class = "header-hr"/>
-<nav class='bannerlist'>
-	<ul>
-		<li><a href = "/home/index" <?php echo $action =='index'? 'class=active' : '' ?> >Home</a></li>
-		<li><a href = "/home/aboutUs" <?php echo $action =='aboutUs'? 'class=active' : '' ?> >About</a></li>
-		<li><a href = "/IMEI/indexImei" <?php echo $action =='indexImei'? 'class=active' : '' ?> id = 'indeximei' >IMEI</a></li>
-		<li><a href = "/project/indexProject" <?php echo $action =='indexProject'? 'class=active' : '' ?> id = 'indexProject' >Project</a></li>
-	</ul>
-</nav>
-<hr class = "header-hr"/>
+
+<hr class = "ztd-header-hr"/>
+
+<div id='bannerlist-div'>
+	<nav class='bannerlist-ul'>
+		<ul>
+			<li><a href = "/home/index" <?php echo $action =='home'? 'class=active' : '' ?> >Home</a></li>
+			<li><a href = "/IMEI/ImeiIndex" <?php echo $action =='IMEI'? 'class=active' : '' ?> id = 'ImeiIndex' >IMEI</a></li>
+			<li><a href = "/Project/ProjectIndex" <?php echo $action =='Project'? 'class=active' : '' ?> id = 'ProjectIndex' >Project</a></li>
+			<?php 
+			
+			
+			?>
+		</ul>
+	</nav>
+</div>
+
+<hr class = "ztd-header-hr"/>
+
 <div class = "sidebar-div" id = 'sidebar-right'></div>

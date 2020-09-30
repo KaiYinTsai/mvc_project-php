@@ -1,0 +1,24 @@
+<?php $action = $this->getAction();
+$main = $action[0];
+$action = $action[1];
+$list = scandir(VIEW .$main);
+$listq = count($list);
+
+?>
+<div id='ztd-list-bar-div'>
+    <h3 id='actionitem'><?php echo $main?></h3><div id='triangle-div'><canvas id='triangle-canvas' width='20' height="20"></canvas></div>
+    <nav class='listbar-ul'>
+        <ul>
+        
+            <?php 
+while($listq>0){
+    $listq--;
+    if($list[$listq]!= "." && $list[$listq] != "..") {   
+       $listtmp = substr($list[$listq],0,-6);    
+       echo "<li><a href = '/".$main."/".$listtmp."'>".strtoupper($listtmp)."</a></li>";
+    }
+}           ?>
+        </ul>
+    </nav>
+</div>
+<div class = 'ztd-main-view-div'>

@@ -1,0 +1,25 @@
+<h1>Update Project</h1>
+
+<!--------project list---------------------------------->
+<div class='projectsel-div'>	
+			<label>Select a Project to Update information</label></br>
+				<div class='project-select-div'>
+				<select name="Project" id="ZTDProjectselUpdate" class="project-select" autofocus>
+					<?php 
+                    $data = $this->view_data;
+
+					for($i=0;$i<count($data);$i++) {
+
+						echo "<option value=".$data[$i][0].">".$data[$i][1]."</option>";
+						
+					}
+					?>
+                </select></div>
+                <table class='projecttable'>
+				</table>
+</div>
+			<div class = 'projectbtn-div'>
+				<input type='button' class='project-btn' value='Update Data' disabled>
+				<input type='button' class='project-btn' value='Del Project' disabled>
+			</div>
+	</form>
