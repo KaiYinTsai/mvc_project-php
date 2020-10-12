@@ -296,3 +296,20 @@
         text-align: center;
         text-align-last: center;
     }
+    /*****************************Login*******************************/
+    
+    .btn-login {
+        background-color: rgb(64, 192, 235);
+        width: 10 em;
+        font-size: 2em;
+        height: 3em;
+        border-radius: 2em;
+        border-width: 0.3em;
+        border-bottom-color: lightblue;
+    }
+    
+    .btn-login:hover {
+        background-color: rgb(132, 205, 230);
+        border-bottom-color: rgb(255, 255, 255);
+        border-width: 0.4em;
+    }

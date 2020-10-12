@@ -117,7 +117,6 @@ $('#actionitem').click(function() {
 
 });
 
-
 function Triangle(status) {
 
     var canvas = document.getElementById("triangle-canvas");

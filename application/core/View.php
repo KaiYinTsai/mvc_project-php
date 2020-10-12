@@ -28,7 +28,17 @@ class View
 		$action = explode(DIRECTORY_SEPARATOR,$this->view_file);
 		return $action;
 			
-		}
+	}
+
+
+	public function loginrender() {
+		if(file_exists(VIEW . $this->view_file . '.html')) {
+			include CONFIG."get_browse_info.php";
+			include VIEW . $this->view_file . '.html';
+
+			}
+	}
 
 }
+
 ?>
